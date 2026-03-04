@@ -1,0 +1,209 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #0A0C0A;
+  --bg2: #101410;
+  --bg3: #161C16;
+  --bg4: #1E261E;
+  --bg5: #2A362A;
+
+  --border: #1E261E;
+  --border2: #2A362A;
+
+  --lime: #A3E635;
+  --lime2: #84CC16;
+  --lime3: #65A30D;
+  --lime-soft: rgba(163, 230, 53, 0.08);
+  --lime-glow: rgba(163, 230, 53, 0.18);
+  --lime-dim: rgba(163, 230, 53, 0.35);
+
+  --twitter: #1D9BF0;
+  --twitter-soft: rgba(29, 155, 240, 0.08);
+  --linkedin: #60A5FA;
+  --linkedin-soft: rgba(96, 165, 250, 0.08);
+  --email: #F472B6;
+  --email-soft: rgba(244, 114, 182, 0.08);
+  --tldr: #FCD34D;
+  --tldr-soft: rgba(252, 211, 77, 0.08);
+
+  --red: #F87171;
+  --red-soft: rgba(248, 113, 113, 0.08);
+
+  --text: #ECFCCB;
+  --text2: #86A869;
+  --text3: #4A6040;
+  --text4: #2A362A;
+
+  --font: 'Inter', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+  --radius: 12px;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border2);
+  border-radius: 4px;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font);
+  border: none;
+  outline: none;
+  background: none;
+  color: inherit;
+}
+
+input,
+textarea {
+  font-family: var(--font);
+  outline: none;
+  color: var(--text);
+}
+
+.input {
+  width: 100%;
+  background: var(--bg3);
+  border: 1.5px solid var(--border2);
+  border-radius: 10px;
+  padding: 11px 15px;
+  font-size: 13px;
+  color: var(--text);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.input:focus {
+  border-color: var(--lime);
+  box-shadow: 0 0 0 3px var(--lime-soft);
+}
+
+.input::placeholder {
+  color: var(--text3);
+}
+
+.btn-primary {
+  background: var(--lime);
+  color: #0A0C0A;
+  padding: 10px 24px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 800;
+  transition: all 0.15s;
+  box-shadow: 0 2px 20px var(--lime-glow);
+  letter-spacing: 0.01em;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--lime2);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 32px var(--lime-glow);
+}
+
+.btn-primary:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border2);
+  color: var(--text2);
+  padding: 8px 15px;
+  border-radius: 10px;
+  font-size: 12px;
+  transition: all 0.15s;
+}
+
+.btn-ghost:hover {
+  border-color: var(--lime-dim);
+  color: var(--lime);
+}
+
+.copy-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  transition: all 0.15s;
+  background: var(--bg4);
+  border: 1px solid var(--border2);
+  color: var(--text3);
+}
+
+.copy-btn:hover {
+  color: var(--text2);
+  border-color: var(--lime-dim);
+}
+
+.copy-btn.copied {
+  color: var(--lime);
+  border-color: var(--lime-dim);
+  background: var(--lime-soft);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px)
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0
+  }
+
+  100% {
+    background-position: 200% 0
+  }
+}
+
+@keyframes limeglow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 24px var(--lime-glow);
+  }
+
+  50% {
+    box-shadow: 0 0 48px var(--lime-glow), 0 0 80px rgba(163, 230, 53, 0.08);
+  }
+}
