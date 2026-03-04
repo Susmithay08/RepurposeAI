@@ -9,7 +9,7 @@ Turn one blog post into 4 content formats instantly using Groq LLaMA 3.3.
 
 
 ---
-FRONTEND_URL = 
+FRONTEND_URL = https://repurposeai-1.onrender.com
 
 ## What it generates
 - **TL;DR** — 3-4 sentence plain English summary
